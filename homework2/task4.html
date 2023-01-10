@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    /*Для решения задания вам потребуется оператор остаток от деления %, например 10%3 === 1 , десять разделить на 3, остаток 1, второй пример 7 % 5, тут остаток от деления будет 2, ну и 3 пример это 14 % 10 === 4, остаток от деления на 10 будет равен 4)
+    Необходимо от пользователя получить число.
+    Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц.*/
+
+    let Number = prompt('Введите число');
+    let unit = Number % 10;
+    let ten = (Math.trunc(Number/10)) % 10;
+    let hundred = (Math.trunc(Number/100)) % 10 ;
+    alert (`В числе ${Number} сотен ${hundred}, десятков ${ten}, единиц ${unit}`);
+    </script>
+</body>
+</html>
