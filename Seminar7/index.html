@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+<body>
+    <!-- -------Задание №1--------->
+    
+    <!--1 Дан блок, внутри него необходимо создать элемент div с классом item, разместить текст “Элемент внутри” и задать стили
+    • Цвет текста синий
+    • Рамка сплошная черная
+    • Цвет фона #f8f8f8
+    • Внутренний отступ 16px
+    1 Добавить данному блоку класс item_1 (использовать setAttribute)-->
+    <!-- <div class="block"></div>
+
+    <script>
+        const blockEl = document.querySelector('.block');
+        const itemEl = document.createElement('div');
+        itemEl.classList.add('item');
+        itemEl.textContent = 'Элемент внутри';
+        blockEl.appendChild(itemEl);
+        
+        itemEl.style.color = 'blue';
+        itemEl.style.border = ' 1px solid black';
+        itemEl.style.backgroundColor = '#f8f8f8';
+        itemEl.style.padding = '16px';
+        
+        itemEl.onclick = function () {
+        itemEl.setAttribute('class', 'item item_1');
+        }
+    </script> -->
+    
+<!---------Задание №2---------
+ 1 Дан код
+Необходимо с помощью querySelector найти параграф с классом text
+2 Вывести в консоль соседний элемент h2
+3 Вывести в консоль родительский элемент content
+4 Вывести в консоль картинку
+5 Вывести в консоль родительский элемент elem
+ -->
+ <!-- <div class="elem">
+    <img src="photo.png" alt="photo">
+    <div class="content">
+      <h2 class="heading">Lorem, ipsum dolor.</h2>
+      <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, ea!</p>
+    </div>
+</div>
+<script>
+        const paragraph = document.querySelector('.text');
+            console.log(paragraph);
+            console.log(paragraph.previousElementSibling);
+            console.log(paragraph.parentElement);
+            console.log(paragraph.parentElement.previousElementSibling);
+            console.log(paragraph.parentElement.previousElementSibling.parentElement);
+// paragraph.onclick = function () {
+// paragraph.previousElementSibling.remove();
+// 
+</script>  -->
+        
+<!-----------Задание №3-----------
+С помощью querySelector найти элемент h2  и вывести в консоль всех его родителей-->
+<!-- <div class="item">
+    <div class="elem">
+    <div class="info">
+    <h2 class="subtitle">Lorem, ipsum dolor.</h2>
+    </div>
+    </div>
+    </div>
+    
+    
+    <script>
+    const subtitleEl = document.querySelector('.subtitle');
+    let parentEl = subtitleEl.parentElement;
+    // for (let i = 0; i < document.body.childNodes.length; i++) {
+    // if (parentEl) {
+    // console.log(parentEl);
+    // parentEl = parentEl.parentElement;
+    // } else {
+    // break;
+    // }
+    // }
+    while (parentEl) {
+    console.log(parentEl);
+    parentEl = parentEl.parentElement;
+    }
+    </script> -->
+
+<!-------------Задание №4-----------  
+1 Дано поле ввода и кнопка отправить, необходим реализовать функционал, если пользователь нажимает на кнопку отправить, а поле ввода пустое, то под полем ввода и кнопкой должен появиться заголовок h2 с текстом вы не заполнили поле ввода
+2 Цвет у рамки сделать красным-->
+
+<form action="#">
+    <input type="text">
+    <button class="btn">Отправить</button>
+</form>
+<script>
+    const body = document.querySelector("body");
+    const pElem = document.createElement("p");
+    body.appendChild(pElem);
+    const buttonElem = document.querySelector(".btn");
+    const inputEl = document.querySelector("input");
+    buttonElem.onclick = function () {
+        if (inputEl.value === "") {
+            inputEl.style.border = "2px dashed red";
+            pElem.textContent = "Вы не заполнили поле ввода";
+        }
+    };
+</script>
+</body>
+</html>
