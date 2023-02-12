@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+<div class="content"></div>
+<script src="data.js"></script>
+
+<script>
+const contentEl = document.querySelector('.content');
+const data = JSON.parse(dataInfo);
+console.log(data);
+
+data.forEach(element => {
+const idEl = document.createElement('h1');
+idEl.classList.add('id');
+idEl.textContent = element.id;
+
+const nameEl = document.createElement('h2');
+nameEl.classList.add('name');
+nameEl.textContent = element.name;
+
+const imgEl = document.createElement('img');
+imgEl.classList.add('img');
+imgEl.setAttribute('alt','mem');
+imgEl.scr = element.url;
+
+const widthEl = document.createElement('p');
+widthEl.classList.add('width');
+widthEl.textContent = element.width;
+
+const heightEl = document.createElement('p');
+heightEl.classList.add('height');
+heightEl.textContent = element.height;
+
+const box_countEl = document.createElement('p');
+box_countEl.classList.add('box_count');
+box_countEl.textContent = element.box_count;
+
+const captionsEl = document.createElement('p');
+captionsEl.classList.add('captions');
+captionsEl.textContent = element.captions;
+
+contentEl.appendChild(idEl);
+contentEl.appendChild(nameEl);
+contentEl.appendChild(imgEl);
+contentEl.appendChild(widthEl);
+contentEl.appendChild(heightEl);
+contentEl.appendChild(box_countEl);
+contentEl.appendChild(captionsEl);
+
+});
+</script>
+</body>
+</html>
