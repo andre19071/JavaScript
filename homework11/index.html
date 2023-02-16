@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Дан макет сайта https://www.figma.com/file/mnLY69cYE5cqWM5w6n5hXx/Seo-%26-Digital-Marketing-Landing-Page?node-id=190%3A1194&t=q4NMnXTnwyyTSGA6-0
+В блоке Featured Items небходимо реализовать шаблон товаров.
+Для этого необходимо создать json формат данных по всем товарам.
+Из этого файла сформировать блок Featured Items.
+Всю вёрстку остальных частей реализовывать не нужно, если у вас она была сделана на html/css можно использовать, заново создавать не требуется. -->
+<body>
+    <section class="features">
+        <div class="container">
+            <h2 class="features-heading">Fetured Items</h2>
+            <p class="features-dsc">Shop for items based on what we featured in this week</p>
+            <div class="products-box"></div>
+            <div class="button">
+                <button class="browse">Browse All Product</button>
+            </div>
+        </div>
+    </section>
+    <script src="data.js"></script>
+    <script>
+        const dataProducts = JSON.parse(data);
+
+        dataProducts.forEach(element => {
+            const productsBoxEl = document.querySelector('.products-box');
+            console.log(productsBoxEl);
+            const productEl = document.createElement('div');
+            productEl.classList.add('product');
+            productsBoxEl.appendChild(productEl);
+
+            const productImgEl = document.createElement('div');
+            productImgEl.classList.add('product-img');
+            productEl.appendChild(productImgEl);
+
+            const imageEl = document.createElement('img');
+            imageEl.classList.add('image');
+            imageEl.setAttribute('alt', 'product image');
+            imageEl.src = element.image;
+            productImgEl.appendChild(imageEl);
+
+            const productDscEl = document.createElement('div');
+            productDscEl.classList.add('product-dsc');
+            productEl.appendChild(productDscEl);
+
+            const productNameEl = document.createElement('h3');
+            productNameEl.classList.add('product-name');
+            productNameEl.textContent = element.name;
+            productDscEl.appendChild(productNameEl);
+
+            const productAboutEl = document.createElement('p');
+            productAboutEl.classList.add('product-about');
+            productAboutEl.textContent = element.description;
+            productDscEl.appendChild(productAboutEl);
+
+            const priceEl = document.createElement('span');
+            priceEl.classList.add('price');
+            priceEl.textContent = element.price;
+            productDscEl.appendChild(priceEl);
+        });
+    </script>
+</body>
+
+</html>
